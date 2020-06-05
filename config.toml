@@ -1,0 +1,42 @@
+baseURL = "https://blog.altre.us"
+languageCode = "en-gb"
+title = "altre.us"
+theme = "anatole"
+
+[params]
+author = "Alastair Douglas"
+title = "Educational Rants"
+profilePicture = "images/profile.jpg"
+
+[[params.socialIcons]]
+icon = "fa-linkedin"
+title = "Linkedin"
+url = "https://www.linkedin.com/in/altreus"
+
+[[params.socialIcons]]
+icon = "fa-github"
+title = "GitHub"
+url = "https://github.com/altreus"
+
+[[params.socialIcons]]
+icon = "fa-instagram"
+title = "instagram"
+url = "https://www.instagram.com/altre.us"
+
+[[params.socialIcons]]
+icon = "fa-twitter"
+title = "twitter"
+url = "https://twitter.com/altreus"
+
+[menu]
+    [[menu.main]]
+    name = "Posts"
+    identifier = "home"
+    weight = 100
+    url = "/"
+
+    [[menu.main]]
+    name = "About"
+    identifier = "about"
+    weight = 200
+    url = "/about"

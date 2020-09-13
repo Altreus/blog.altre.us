@@ -1,42 +1,57 @@
-baseURL = "https://blog.altre.us"
-languageCode = "en-gb"
-title = "altre.us"
-theme = "anatole"
+baseurl = "https://blog.altre.us"
+languageCode = "en"
+title = "Blog."
+theme = "kiss"
+copyright = "&copy; <a href=\"https://github.com/altreus\">Altreus</a> 2020"
+disqusShortname = "shortname"
+googleAnalytics = ""
+Paginate = 5 # Number of posts per page
+enableRobotsTXT = true
 
-[params]
-author = "Alastair Douglas"
-title = "Educational Rants"
-profilePicture = "images/profile.jpg"
+#[params.rss] # Adding this tag enables RSS feed
+#includeContent = true # Includes whole content in rss
+#authorName = "Emir Ribic" # Author full name
+#authorEmail = "ribice@gmail.com" # Author email
 
-[[params.socialIcons]]
-icon = "fa-linkedin"
-title = "Linkedin"
-url = "https://www.linkedin.com/in/altreus"
+[params.assets]
+customCSS = ["css/custom.css"]
 
-[[params.socialIcons]]
-icon = "fa-github"
-title = "GitHub"
-url = "https://github.com/altreus"
+[params.info]
+adsense = "" # Adsense ID (ID only, without ca-pub-)
+enableSocial = true # Adds OpenGraph and Twitter cards
+homeTitle = "" # Title for home page
+poweredby = true # Adds powered by hugo and kiss below Copyright
+related = false # Includes related articles at the bottom of the article
+codeCopy = true # Add copy button above code blocks
+taxonomiesCount = true # Add taxonomies count
 
-[[params.socialIcons]]
-icon = "fa-instagram"
-title = "instagram"
-url = "https://www.instagram.com/altre.us"
+[params.features]
+disqusOnDemand = true  # Load Disqus comments on click
 
-[[params.socialIcons]]
-icon = "fa-twitter"
-title = "twitter"
-url = "https://twitter.com/altreus"
 
-[menu]
-    [[menu.main]]
-    name = "Posts"
-    identifier = "home"
-    weight = 100
-    url = "/"
+[params.opengraph.facebook]
+admins = [] # array of Facebook IDs
+appID = ""
+pageID = ""
 
-    [[menu.main]]
-    name = "About"
-    identifier = "about"
-    weight = 200
-    url = "/about"
+[params.opengraph.twitter]
+page = "" # Twitter Page username. If not set, params.social.twitter will be used.
+
+[params.social]
+twitter = "altreus"
+github = "altreus"
+email = ""
+linkedin = "altreus"
+facebook = ""
+instagram = ""
+codepen = ""
+rss = "index.xml" # Add this to show RSS button in social.
+
+[params.social.config]
+platforms = ["github","twitter","linkedin"]
+
+[taxonomies]
+tag ="tags"
+
+[blackfriday]
+hrefTargetBlank = true

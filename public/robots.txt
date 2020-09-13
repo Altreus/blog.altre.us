@@ -1,0 +1,3 @@
+User-agent: *
+
+Sitemap: https://blog.altre.us/sitemap.xml

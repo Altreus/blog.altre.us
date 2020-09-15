@@ -25,7 +25,18 @@ future posts. However, the URL is the first point in the timeline that most
 humans interface with this whole area of understanding, so here's where we
 start.
 
-{ $TOC }
+* [Episode 1: The URL](#episode-1-the-url)
+  * [URL Structure](#url-structure)
+    * [`https://`](#https)
+    * [`blog.altre.us`](#blogaltreus)
+    * [`/posts/my-name-is-url`](#postsmy-name-is-url)
+  * [Choosing a URL](#choosing-a-url)
+  * [Accessing a URL](#accessing-a-url)
+* [Other URL pieces](#other-url-pieces)
+    * [`?q=url`](#qurl)
+    * [`#links`](#links)
+* [Epilogue](#epilogue)
+
 
 # Episode 1: The URL
 

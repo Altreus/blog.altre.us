@@ -232,19 +232,27 @@ The new parts are identified by a `?` and a `#`
 
 ### `?q=url`
 
-TODO: Make this more graspable
-
 This is called the *query string*. I chose a search engine as an
-example on purpose because it exemplifies the purpose of a query string, but any
-resource on the internet can use a query string, although the vast majority of
-them don't.
+example on purpose because it exemplifies the purpose of a query string. In
+truth, any resource on the internet can use a query string, although the vast
+majority of them don't. This is because most resources on the internet are just
+static things like images and pages.
 
-The query string allows you to provide parameters to the resource, in the case
-that the resource can provide you different information depending on the
-parameters. A good example is—oh! A search! This resource is returning the
-results of performing a search on a massive index of information somewhere. The
-*capability of searching* is the resource; it qualifies as a resource, though,
-because it can be identified.
+The query string allows you to provide parameters to the resource. I mentioned
+that every resource on the internet can accept a query string; this is true, but
+unless the resource is created to make use of it, it will simply do nothing at
+all. Try it yourself with any site you currently have open: if there's no ? in
+the URL, add one, and some gubbins after it, and see if it reacts.
+
+In the case that the resource *is* designed to accept parameters, this is how
+the parameters are provided. There is absolutely no restrictions on what the
+query string can contain[^6], but the particular resource identified by the URL
+will almost certainly only understand certain queries.
+
+Trying to think of a good example—oh! A search! In our DDG example, the root
+resource is returning the results of performing a search on a massive database
+of information somewhere. The *capability of searching* is the resource; it
+qualifies as a resource, though, because it can be identified.
 
 In our example, the query string is being used to send parameters to the
 resource by using a simple key=value sort of structure. If you were to change
@@ -263,17 +271,29 @@ multiple parameters, we simply use `&`:
 
     ?q=url&source=my+blog&tracking=off
 
-This is a *convention*, not a *requirement*[^6]. The query string can be *anything
-at all*[^7]; it is up to the software that handles your request to interpret it.
+This is a *convention*, not a *requirement*[^7]. The query string can be *anything
+at all*[^6]; it is up to the software that handles your request to interpret it.
 However, the above convention is so common I have not been able to find an
 example that contradicts it.
 
-[^6]: This format is the `application/x-www-form-urlencoded` [MIME
-  type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)
+I mentioned "the software that handles your request". It is probably not
+immediately to obvious to anyone not familiar with the subject that when you
+receive data in your web browser—the response from requesting a resource—there
+is absolutely nothing in the whole magical internet system that says *how* to
+produce that data. DuckDuckGo do not have a massive directory on disks in
+datacentres that store every possible result of every possible query! But I bet
+they have image files on disk that contain their logo. The *searches* are
+generated on the fly, while the *static* resources (like the logo) are just
+stored as files in datacentres.
 
-[^7]: Literally anything. There is no standard limit to the length of the query
+There will be more on the concept of resources in a future episode.
+
+[^6]: Literally anything. There is no standard limit to the length of the query
   string, but one is often enforced to prevent attacks. This said, we discuss
   the restricted characters for URLs in [extra credits](/posts/extra-credits-urls).
+
+[^7]: This format is the `application/x-www-form-urlencoded` [MIME
+  type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)
 
 ### `#links`
 
@@ -304,11 +324,12 @@ how the table of contents and footnotes work in these posts!)
 # Epilogue
 
 This is only a brief overview of the URL, even though it ended up not being very
-brief at all. Further reading is available in [extra
-credits](/posts/extra-credits-urls). I recommend looking in there if you intend
-to make any software that makes use of URLs, even if it's just a blog where you
-have control over the paths. We will discuss the concept of a resource in more
-depth, and look at more uses of the various parts of the URL structure. We
-might even use the word *protocol*, which is a very cool techy word indeed.
+brief at all. Further reading will be available in [extra
+credits](/posts/extra-credits-urls) when I've written it. I recommend looking in
+there if you intend to make any software that makes use of URLs, even if it's
+just a blog where you have control over the paths. We will discuss the concept
+of a resource in more depth, and look at more uses of the various parts of the
+URL structure. We might even use the word *protocol*, which is a very cool techy
+word indeed.
 
 In the next episode we will look at HTTP.

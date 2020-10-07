@@ -185,7 +185,7 @@ that history is going to get issues. "History" is used to refer to the stuff
 that's been shared, which is now considered immutable because previously it was
 a huge issue to change stuff that had been shared.
 
-Again, the solution is not to use branches that are not yours, and other people
+Again, the solution is to not use branches that are not yours, and other people
 editing their own history will not affect you.
 
 Once a book or a film is published, editing stops, unless you're George Lucas.

@@ -1,7 +1,6 @@
 ---
 title: Clearing the rebase FUD
-date: 2020-09-28
-draft: true
+date: 2020-10-07
 series:
   - Tools of the trade
 tags:

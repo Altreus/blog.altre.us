@@ -1,6 +1,7 @@
 #!/usr/bin/env perl
 use v5.24;
 use Text::Template;
+use Opt::Imistic;
 
 my $t = shift;
 
@@ -28,4 +29,14 @@ while (<$t_in>) {
     $T::TOC .= ('  ' x ($level - 1)) . '* ' . "[$_](#$link)\n";
 }
 
-print $template->fill_in(PACKAGE => 'T');
+my $fixed = $template->fill_in(PACKAGE => 'T');
+
+close $t_in;
+
+if ($ARGV{i}) {
+    open my $t_out, '>', $t;
+    $t_out->print($fixed);
+}
+else {
+    print $fixed;
+}

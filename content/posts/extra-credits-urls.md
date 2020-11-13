@@ -1,7 +1,6 @@
 ---
 title: "Extra Credits: URLs"
-date: 2020-06-05T19:21:49+01:00
-draft: true
+date: 2020-11-13
 series:
   - Extra Credits
 tags:
@@ -28,7 +27,17 @@ The authority part of a URL looks like this:
 
 Let's talk about that.
 
-{ $TOC }
+  * [Authority and authorisation](#authority-and-authorisation)
+    * [Who are you](#who-are-you)
+    * [Any port in a storm](#any-port-in-a-storm)
+    * [A distressing lack of authority](#a-distressing-lack-of-authority)
+  * [The use and misuse of query strings](#the-use-and-misuse-of-query-strings)
+    * [Don't use a query if you're not asking a question](#don-t-use-a-query-if-you-re-not-asking-a-question)
+    * [Say what you mean](#say-what-you-mean)
+    * [The semantic URL structure](#the-semantic-url-structure)
+  * [Percent-encoding](#percent-encoding)
+  * [The URI and URN](#the-uri-and-urn)
+
 
 ## Authority and authorisation
 
@@ -307,6 +316,35 @@ link, just because I wanted to use a `?` in my URL. It makes no sense. It would
 mean that I cannot possibly simplify my web server setup, because I am beholden
 to my own design that I will use a `?` for no reason, and thus I must support my
 own special application to handle them.
+
+### The semantic URL structure
+
+The URL structure is really this:
+
+    https://authority.com/type/identifier?query-string#fragment
+    |-----------------------------------| |----------| |------|
+    | Resource                            | Question   | Section
+
+You see that the query string is a question you ask of the resource. You might
+ask addresses if it has any addresses in Coventry, but you don't *need* to ask
+if it has an address with a given ID. That's because the former thing is a
+search, but the latter is a lookup.
+
+In tech, semantics are important; this means that the way you use text carries
+meaning beyond the text itself. If you've used a query you have implied that
+this is *not* a simple resource lookup.
+
+They're doing this:
+
+    https://authority.com/type?query-string
+    |-------------------------------------|
+    | Resource
+
+To find an address in a real address book you would just go to where it is
+(notwithstanding the fact that you would have to search: in this analogy, you
+already know where it is). You wouldn't search through the address book for all
+addresses that match the one you want. But you *would* search for all addresses
+that are in Coventry.
 
 ## Percent-encoding
 

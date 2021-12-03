@@ -71,6 +71,14 @@ Basically, you can click on a URL.
   to use URL as a word. Reading the separate letters seems to be the norm so
   I'll be assuming you read it the same.
 
+Like many things on the internet, the URL has an RFC, which can be found
+[here](https://tools.ietf.org/html/rfc1738). The URI also has an RFC, which can
+be found [here](https://tools.ietf.org/html/rfc3986). The opening paragraphs may
+give you some insight into the difference, but in general they are a dry read
+and I wouldn't bother[^3].
+
+[^3]: This makes it harder for you to correct me.
+
 ## URL Structure
 
 ![A deconstructed URL](/images/my-name-is-url.svg)
@@ -129,9 +137,9 @@ credits](/posts/extra-credits-urls).
 
 This is the *path*. You can tell it's a path because it looks like one. Windows
 users will be confused: aren't paths stuff like `C:\Games\Minesweeper`? Sorry to
-report that you're special! Everyone else[^3] uses the forward slash here.
+report that you're special! Everyone else[^4] uses the forward slash here.
 
-[^3]: I cannot speak to unusual operating systems like OS/2 and TempleOS.
+[^4]: I cannot speak to unusual operating systems like OS/2 and TempleOS.
 
 A path on your operating system refers to a file. A file is a resource. On the
 internet, the path does not have to point to a file. The resource could be
@@ -143,9 +151,9 @@ files; some of them refer to devices, or system information, or other resources
 like a random number generator.
 
 If it were not for the requirement that the URL have a scheme, UNIX paths would
-All be URLs[^4].
+All be URLs[^5].
 
-[^4]: You can turn a file path into a URL by using the `file://` scheme.
+[^5]: You can turn a file path into a URL by using the `file://` scheme.
   Sometimes you'll see `file:///`—this third slash is because *the path
   itself* begins with a slash. This is exactly what you'd expect from a URL with
   no authority part.
@@ -213,9 +221,9 @@ URLs have more parts than that.
 
 If you follow this URL (which you can, because it's a URL!) you will be taken
 to a DuckDuckGo search for the term `url`, and if it still works your page will be
-scrolled down to the top of the search results[^5].
+scrolled down to the top of the search results[^6].
 
-[^5]: At the time of writing there's a bug in DuckDuckGo whereby it rewrites the
+[^6]: At the time of writing there's a bug in DuckDuckGo whereby it rewrites the
   URL on load, for some reason, and gets the rewriting wrong. However, the
   behaviour appears to remain correct. Be aware that the URL in your browser
   will not match the one I'm talking about as a result of this bug.
@@ -246,7 +254,7 @@ the URL, add one, and some gubbins after it, and see if it reacts.
 
 In the case that the resource *is* designed to accept parameters, this is how
 the parameters are provided. There is absolutely no restrictions on what the
-query string can contain[^6], but the particular resource identified by the URL
+query string can contain[^7], but the particular resource identified by the URL
 will almost certainly only understand certain queries.
 
 Trying to think of a good example—oh! A search! In our DDG example, the root
@@ -271,8 +279,8 @@ multiple parameters, we simply use `&`:
 
     ?q=url&source=my+blog&tracking=off
 
-This is a *convention*, not a *requirement*[^7]. The query string can be *anything
-at all*[^6]; it is up to the software that handles your request to interpret it.
+This is a *convention*, not a *requirement*[^8]. The query string can be *anything
+at all*[^7]; it is up to the software that handles your request to interpret it.
 However, the above convention is so common I have not been able to find an
 example that contradicts it.
 
@@ -288,11 +296,11 @@ stored as files in datacentres.
 
 There will be more on the concept of resources in a future episode.
 
-[^6]: Literally anything. There is no standard limit to the length of the query
+[^7]: Literally anything. There is no standard limit to the length of the query
   string, but one is often enforced to prevent attacks. This said, we discuss
   the restricted characters for URLs in [extra credits](/posts/extra-credits-urls).
 
-[^7]: This format is the `application/x-www-form-urlencoded` [MIME
+[^8]: This format is the `application/x-www-form-urlencoded` [MIME
   type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)
 
 ### `#links`
@@ -304,11 +312,11 @@ server. It is *entirely* for the use of the client.
 The client is your browser.
 
 So, the client makes use of it. When a browser sees a fragment, the first thing
-it will try to do is find an element on the page that has the same ID[^8]; if it is
+it will try to do is find an element on the page that has the same ID[^9]; if it is
 found, it will scroll the page to that element. Basically, this lets you put a
 link to a *section* of a page, rather than just to the page itself.
 
-[^8]: We'll talk about page elements and their IDs when we get to the post on
+[^9]: We'll talk about page elements and their IDs when we get to the post on
   HTML. If I've already written that, hopefully I've updated this footnote with
   it.
 
